@@ -24,6 +24,7 @@ import UnitedKingdom.*
 
 def msg = "I was compiled by Scala 3. :)"
 
+// functions
 def sum(n1:Int, n2: Int): Int = n1 + n2
 
 def lightSwitch(switchOn: Boolean = false): String = if switchOn then "light on!" else "light off"
@@ -58,7 +59,7 @@ def greeting_person(person: Person): String = s" Hi ${person.name}"
 
 val preethi = Person("preethi", 26)
 
-
+// case classes
 case class Country(country_name: String, country_population: Int)
 
 def population(country: Country): Int = country.country_population
@@ -66,6 +67,7 @@ def population(country: Country): Int = country.country_population
 val india = Country("India", 600000)
 val country = England
 
+// enums
 enum UnitedKingdom:
   case England, NorthernIreland, Scotland, Wales
 
