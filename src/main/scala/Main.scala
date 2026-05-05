@@ -20,6 +20,13 @@ import UnitedKingdom.*
   println(population(india))
   if country == Scotland then println("We're in Scotland") else println("we're in UK")
   println(whereAmI(Scotland))
+  println(middleName.getOrElse("").length) // to get the value out of a option and get its length
+  println(upper_middle_name)
+  println(mulan.name)
+  println(mulan.rating)
+  println(mulan.rating.map(rating => rating.googleRating))
+  println(mulan.rating.map(rating => rating.googleRating).flatten)
+  println(mulan.rating.flatMap(rating => rating.googleRating))
 
 
 def msg = "I was compiled by Scala 3. :)"
@@ -76,4 +83,21 @@ def whereAmI(country: UnitedKingdom): String = country match
   case NorthernIreland => "Ireland"
   case Scotland => "Scotland"
   case Wales => "Wales"
+
+// Options --> can have 2 possible values None/ Some
+//val middleName: Option[String] = None
+
+val middleName: Option[String] = Some("Jasmine")
+
+
+// map function
+val upper_middle_name = middleName.map(word => word.toUpperCase)
+
+// flatmap
+case class Rating(googleRating: Option[Int])
+case class Film(name: String, rating: Option[Rating])
+val mulan = Film("Mulan", Some(Rating(Some(5))))
+
+// for comprehensions
+
 
